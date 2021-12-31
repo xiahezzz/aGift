@@ -1,0 +1,101 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<title>Our Love Story</title>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<style type="text/css">
+		@font-face {
+			font-family: digit;
+			src: url('digital-7_mono.ttf') format("truetype");
+		}
+	</style>
+	<link href="css/default.css" type="text/css" rel="stylesheet">
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/garden.js"></script>
+    <script type="text/javascript" src="js/functions.js"></script>
+</head>
+
+<body>
+	<div id="mainDiv">
+		<div id="content">
+			<div id="code">
+				<span class="comments">/**</span><br />
+				<span class="space"/><span class="comments">* Sep 27, 2021, 我们在一起了, 即将迎来我们的第一个百日纪念</span><br />
+				<span class="space"/><span class="comments">* 我想用我喜欢的方式记下与贝贝在一起的感动瞬间</span><br />
+				<span class="space"/><span class="comments">*/</span><br />
+				<span class="keyword">2021-9-26 -> 2021-9-29</span><br />
+				<span class="string">	* </span> 我们在一起了，一起去吃了恩你<br />
+				<span class="string">	* </span> 我用你的电脑参加了线上答辩<br />
+				<span class="string">	* </span> 合肥·卡门<br />
+				<span class="keyword">2021-10-31 -> 2021-11-3</span><br />
+				<span class="string">	* </span> 一起爬了大蜀山、吃了夜宵、吃了莽爷火锅、一起穿上情侣卫衣<br />
+				<span class="string">	* </span> 贝贝第一次想我晚一些走<br />
+				<span class="string">	* </span> 合肥·卡门<br />
+				<span class="keyword">2021-12-2 -> 2021-12-2</span><br />
+				<span class="string">	* </span> 去贝贝上课的地方等贝贝下课一起散步<br />
+				<span class="string">	* </span> 带了路上遇到小贩卖的向日葵🌻:沉默而忠诚的爱<br />
+				<span class="string">	* </span> 杭州·蚕生活花园超市<br />
+				<span class="keyword">2021-12-5 -> 2021-12-5</span><br />
+				<span class="string">	* </span> 和贝贝闹矛盾了，但是见到以后就都释然了<br />
+				<span class="string">	* </span> 一起吃了一米鸡，很喜欢和贝贝一起吃饭!<br />
+				<span class="string">	* </span> 杭州·杭州电子科技大学<br />
+				<span class="keyword">2021-12-19 -> 2021-12-19</span><br />
+				<span class="string">	* </span> 解除隔离以后，终于赶上贝贝离开杭州的时间了<br />
+				<span class="string">	* </span> 和贝贝在钱塘江边散步，见到了很亮很圆很美的月亮（月色真美）<br />
+				<span class="string">	* </span> 杭州·钱塘江边<br />
+				<span class="keyword">2022-1-5 -> ????-??-??</span><br />
+				<span class="comments">/**</span><br />
+				<span class="space"/><span class="comments">* 和你的未来正在眼下，第一个百日纪念快乐，我喜欢你我的贝贝贝贝～</span><br />
+				<span class="space"/><span class="comments">* 日子常新，未来不远。</span><br />
+				<span class="space"/><span class="comments">*/</span><br />
+			</div>
+			<div id="loveHeart">
+				<canvas id="garden"></canvas>
+				<div id="words">
+					<div id="messages">
+						<div class="signature">BeiBei, I have fallen in love with you for</div>
+						<div id="elapseClock"></div>
+					</div>
+					<div id="loveu">
+						<div class="signature">Love u forever and ever.</div><br/>
+						<div class="signature">-Zhou</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		var offsetX = $("#loveHeart").width() / 2;
+		var offsetY = $("#loveHeart").height() / 2 - 55;
+		var together = new Date();
+		together.setFullYear(2021, 8, 27);
+		together.setHours(0);
+		together.setMinutes(0);
+		together.setSeconds(0);
+		together.setMilliseconds(0);
+		
+		if (!document.createElement('canvas').getContext) {
+			var msg = document.createElement("div");
+			msg.id = "errorMsg";
+			msg.innerHTML = "Your browser doesn't support HTML5!<br/>Recommend use Chrome 14+/IE 9+/Firefox 7+/Safari 4+"; 
+			document.body.appendChild(msg);
+			$("#code").css("display", "none")
+			$("#copyright").css("position", "absolute");
+			$("#copyright").css("bottom", "10px");
+		    document.execCommand("stop");
+		} else {
+			setTimeout(function () {
+				startHeartAnimation();
+			}, 5000);
+
+			timeElapse(together);
+			setInterval(function () {
+				timeElapse(together);
+			}, 500);
+
+			adjustCodePosition();
+			$("#code").typewriter();
+		}
+	</script>
+</body>
+</html>
